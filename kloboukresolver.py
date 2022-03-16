@@ -71,7 +71,7 @@ root_servers = [
     }
 ]
 
-# TErminalove barvicky
+# Terminalove barvicky
 class color:
    PURPLE = "\033[95m"
    CYAN = "\033[96m"
@@ -114,7 +114,7 @@ class KloboukResolver:
         ip = self.__resolve(domain)
         end = time.time()
 
-        # Slovnik se statisrtikou
+        # Slovnik se statistikou
         stats = {
             "query_counter": self.stats_query_counter,
             "query_nameservers": self.stats_query_nameservers,
@@ -132,8 +132,8 @@ class KloboukResolver:
         ip = []
 
         # Jen drobne ocisteni domeny
-        # Bastl, toto by se melo resit ponoi dns.name,
-        # ale nechtelo se m ito hledat v dokumentaci
+        # Bastl, toto by se melo resit pomoci dns.name,
+        # ale nechtelo se mi to hledat v dokumentaci
         if domain[-1] == ".":
             domain = domain[:-1]
         
@@ -143,8 +143,8 @@ class KloboukResolver:
         operator = root_server["op"]
         nameserver_domain = ""
 
-        # Vytvoreni prvniho textoveh odsazeni
-        # a Vypsani uvitaci zpravy o volbe korenoveho nameserveru a hledani IP adresy pro zadanou domenu
+        # Vytvoreni prvniho textoveho odsazeni
+        # a vypsani uvitaci zpravy
         self.step += 1
         tab = self.tabelator * self.tabsize * self.step
         print("")
@@ -167,7 +167,7 @@ class KloboukResolver:
         for subdomain in subdomains:
 
             # Pripravim si DNS objekt aktualne resene domeny
-            # V pripade www.zive.cz by to tedy bylo po kazdem prochodu:
+            # V pripade www.zive.cz by to tedy bylo po kazdem pruchodu:
             # cz., zive.cz., www.zive.cz.
             current_subdomain = dns.name.from_text(f"{subdomain}.{current_subdomain}")
         
@@ -204,7 +204,7 @@ class KloboukResolver:
                         print("")
                         break
 
-            # Pokd jsme zadny A zaznam s IP adresou nameserveru nenasel....
+            # Pokd jsem zadny A zaznam s IP adresou nameserveru nenasel....
             else:
                 # Zkusim najit v sekci AUTHORITY alespon domeny nameserveru
                 # Pouziji prvni nalezenou a rekurzivnim volanim teto funkce pro ni dohledam IP
@@ -249,7 +249,7 @@ class KloboukResolver:
                     print(f"{tab}{(len(str(self.step))+2) * ' '}Žádná další odpověď, použiji poslední známý server")
                     print("")
 
-        # Prosel jsem cely strome domeny
+        # Prosel jsem cely strom domeny
         # Nyni posledni znamy nameserver pouziji pro vyhledani IP adresy domeny
         self.step +=1
         tab = self.tabelator * self.tabsize * self.step
@@ -291,6 +291,12 @@ class KloboukResolver:
 
 # ************* ZACATEK PROGRAMU *************
 if __name__ == "__main__":
+    
+    # Napoveda pri spusteni bez dalsiho parametru
+    if len(sys.argv) == 1:
+        print("Pouziti: python3 kloboukresolver.py zive.cz")
+        print("Pouziti: python3 kloboukresolver.py zive.cz --ukecany")
+        exit()
 
     # Vychozi ukecanost
     verbose = 0
