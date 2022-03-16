@@ -3,7 +3,7 @@ Demonstrace překladu odménového jména na IP adresu průchodem celého stromu
 - **[Vyžaduje knihovnu dnspython](https://dnspython.readthedocs.io/en/latest/installation.html)**
 - Je to naprostý bastl bez hlubší znalosti zmíněné knihovny!
 - Nejsou ošetřeny všechny chyby, všechny situace!
-- Všechny servery po cestě musejí odpovědět; není implemenetovaná volba alternmativního NS, pokud ten první mlčí!
+- Všechny servery po cestě musejí odpovědět; není implementovaná volba alternativního NS, pokud ten první mlčí!
 
 ![Priklad 1](kloboukresolver_priklad.png "Priklad 1")
 
