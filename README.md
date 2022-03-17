@@ -4,6 +4,7 @@ Demonstrace překladu odménového jména na IP adresu průchodem celého stromu
 - Je to naprostý bastl bez hlubší znalosti zmíněné knihovny!
 - Nejsou ošetřeny všechny chyby, všechny situace!
 - Všechny servery po cestě musejí odpovědět; není implementovaná volba alternativního NS, pokud ten první mlčí!
+- Z toho plyne, že pokud to timeoutne/nenajde IP adresu, zkuste znovu
 
 ![Priklad 1](kloboukresolver_priklad.png "Priklad 1")
 
