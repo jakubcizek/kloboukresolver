@@ -181,7 +181,7 @@ class KloboukResolver:
             query = dns.message.make_query(current_subdomain, dns.rdatatype.NS)
             response = dns.query.udp(query, nameserver)
             self.stats_query_counter += 1
-            self.stats_query_nameservers.append(nameserver.ljust(15, " ") + f"(vyhledání NS záznamu pro doménu {current_subdomain.to_text()})")
+            self.stats_query_nameservers.append(nameserver.ljust(20, " ") + f"(vyhledání NS záznamu pro doménu {current_subdomain.to_text()})")
             
             # Pokud jsem spustil program s parametrem --ukecany
             # vypise se pro kontrolu cela RAW odpoved v textovem formatu DNS
@@ -261,7 +261,7 @@ class KloboukResolver:
                 print(str(response))
                 print("*******************")
         self.stats_query_counter += 1
-        self.stats_query_nameservers.append(nameserver.ljust(15, " ") + f"(vyhledání A záznamu pro doménu {current_subdomain.to_text()})")
+        self.stats_query_nameservers.append(nameserver.ljust(20, " ") + f"(vyhledání A záznamu pro doménu {current_subdomain.to_text()})")
         
         if len(response.answer) > 0:
             # Pokud je nameserver, ktereho se prave ptam na zaznam A, autoritativni,
