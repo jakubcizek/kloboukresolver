@@ -6,6 +6,8 @@ Demonstrace překladu doménového jména na IP adresu průchodem celého stromu
 - Všechny servery po cestě musejí odpovědět; není implementovaná volba alternativního NS, pokud ten první mlčí!
 - Z toho plyne, že pokud to timeoutne/nenajde IP adresu, zkuste znovu
 
+UPDATE PO LETECH: Podpora parametru --dnssec, který edukativně vypíše i ověřování DNSSEC, a drobné opravy
+
 ![Priklad 1](kloboukresolver_priklad.png "Priklad 1")
 
 ![Priklad 12](kloboukresolver_priklad2.png "Priklad 2")
